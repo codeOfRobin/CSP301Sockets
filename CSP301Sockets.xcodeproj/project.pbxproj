@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		7A03C23A1A080ABC0093846E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7A03C2391A080ABC0093846E /* main.cpp */; };
 		7A03C23C1A080ABC0093846E /* CSP301Sockets.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A03C23B1A080ABC0093846E /* CSP301Sockets.1 */; };
+		7A574A301A152BB90024A9E9 /* libboost_serialization.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A574A2F1A152BB90024A9E9 /* libboost_serialization.dylib */; };
+		7AE813EA1A1610A700E19231 /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE813E91A1610A700E19231 /* libboost_system.dylib */; };
+		7AE813EC1A16129100E19231 /* libboost_thread.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE813EB1A16129100E19231 /* libboost_thread.dylib */; };
+		7AE813EE1A161D1000E19231 /* server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7AE813ED1A161D1000E19231 /* server.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +32,10 @@
 		7A03C2361A080ABC0093846E /* CSP301Sockets */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CSP301Sockets; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A03C2391A080ABC0093846E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		7A03C23B1A080ABC0093846E /* CSP301Sockets.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = CSP301Sockets.1; sourceTree = "<group>"; };
+		7A574A2F1A152BB90024A9E9 /* libboost_serialization.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_serialization.dylib; path = ../../../../usr/local/lib/libboost_serialization.dylib; sourceTree = "<group>"; };
+		7AE813E91A1610A700E19231 /* libboost_system.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = ../../../../usr/local/lib/libboost_system.dylib; sourceTree = "<group>"; };
+		7AE813EB1A16129100E19231 /* libboost_thread.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_thread.dylib; path = ../../../../usr/local/lib/libboost_thread.dylib; sourceTree = "<group>"; };
+		7AE813ED1A161D1000E19231 /* server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = server.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +43,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AE813EC1A16129100E19231 /* libboost_thread.dylib in Frameworks */,
+				7AE813EA1A1610A700E19231 /* libboost_system.dylib in Frameworks */,
+				7A574A301A152BB90024A9E9 /* libboost_serialization.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +55,9 @@
 		7A03C22D1A080ABC0093846E = {
 			isa = PBXGroup;
 			children = (
+				7AE813EB1A16129100E19231 /* libboost_thread.dylib */,
+				7AE813E91A1610A700E19231 /* libboost_system.dylib */,
+				7A574A2F1A152BB90024A9E9 /* libboost_serialization.dylib */,
 				7A03C2381A080ABC0093846E /* CSP301Sockets */,
 				7A03C2371A080ABC0093846E /* Products */,
 			);
@@ -61,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				7A03C2391A080ABC0093846E /* main.cpp */,
+				7AE813ED1A161D1000E19231 /* server.cpp */,
 				7A03C23B1A080ABC0093846E /* CSP301Sockets.1 */,
 			);
 			path = CSP301Sockets;
@@ -117,6 +132,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AE813EE1A161D1000E19231 /* server.cpp in Sources */,
 				7A03C23A1A080ABC0093846E /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,7 +172,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -189,7 +205,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -197,6 +213,12 @@
 		7A03C2401A080ABC0093846E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode\\ 3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					/usr/local/include/,
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -204,6 +226,12 @@
 		7A03C2411A080ABC0093846E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Applications/Xcode\\ 3.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include",
+					/usr/local/include/,
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -227,6 +255,7 @@
 				7A03C2411A080ABC0093846E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
