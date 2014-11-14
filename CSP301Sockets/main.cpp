@@ -16,7 +16,6 @@ int main(int argc, char* argv[])
     tcp::resolver::iterator endpointIterator=resolver.resolve(query);
     tcp::socket socket(io_service);
     boost::asio::connect(socket, endpointIterator);
-    
     for (; ; )
     {
         boost::array<char, 128> buffer;
